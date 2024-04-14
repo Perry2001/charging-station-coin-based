@@ -14,7 +14,7 @@ void setup() {
   connectToWiFi();
   connectToFirebase();
 
-  pinMode(signal, INPUT_PULLUP);
+  pinMode(signal, INPUT);
 }
 
 void loop() {
@@ -24,7 +24,7 @@ void loop() {
 
   // Check if the signal state has changed (signal is triggered)
   if (currentSignalState != lastSignalState) {
-    if (currentSignalState == LOW) {
+    if (currentSignalState == HIGH) {
       // Signal is triggered
       signalTriggered = true; // Set signalTriggered to true
     }
